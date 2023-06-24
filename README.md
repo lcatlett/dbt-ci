@@ -1,11 +1,12 @@
-# Docker Build Tools CI
+# Docker Build Tools CI (POC)
 
 [![docker pull quay.io/pantheon-public/build-tools-ci](https://img.shields.io/badge/image-quay-blue.svg)](https://quay.io/repository/pantheon-public/build-tools-ci)
 [![Actively Maintained](https://img.shields.io/badge/Pantheon-Actively_Maintained-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#actively-maintained-support)
 
 [![Docker Hub pantheonpublic/build-tools-ci](https://img.shields.io/docker/pulls/pantheonpublic/build-tools-ci)](https://hub.docker.com/repository/docker/pantheonpublic/build-tools-ci)
 
-This is the source Dockerfile for the [pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) and [pantheonpublic/build-tools-ci](https://hub.docker.com/repository/docker/pantheonpublic/build-tools-ci) docker image.
+This is the source Dockerfile derived from the [pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) and [pantheonpublic/build-tools-ci](https://hub.docker.com/repository/docker/pantheonpublic/build-tools-ci) docker images in order to support reference architecture and other projects led by the Pantheon Professional Services Architecture team.
+
 
 ## Image Contents
 
@@ -33,14 +34,10 @@ This is the source Dockerfile for the [pantheon-public/build-tools-ci](https://q
 
 ## Branches
 
-- 8.x: Use a CircleCI base image with Node JS, composer 2 and Terminus 3. Produces 8.x-php7.4, 8.x-php8.0, 8.x-php8.1 and 8.x-php8.2 image tags.
-- 7.x: Use a CircleCI base image with Node JS and composer 2. Produces 7.x-php7.3, 7.x-php7.4 and 7.x-php8.0 image tags.
-- 6.x: Use a CircleCI base image with Node JS
-- 5.x: Don't create multidevs when commits are made to the default branch, instead working directly on the dev environment
-- 4.x: Terminus 2.x and Build Tools 2.x
-- 3.x: Deprecated: Terminus 1 with Build Tools 2.0.0-beta2
-- 2.x: Terminus 1.x and Build Tools 1.x
-- 1.x: Deprecated
+- 8.x: Use a github-actions base image with Node JS, composer 2 and Terminus 3. Produces 8.x-php7.4, 8.x-php8.0, 8.x-php8.1 and 8.x-php8.2 image tags.
+- release: Use a github-actions base image with Node JS, composer 2 and Terminus 3. Produces 8.x-php7.4, 8.x-php8.0, 8.x-php8.1 and 8.x-php8.2 image tags.
+
+
 
 ## 8.x Docker images
 
@@ -54,21 +51,10 @@ PHPVERSION=7.4
 docker build --build-arg PHPVERSION=$PHPVERSION -t quay.io/pantheon-public/build-tools-ci:8.x-php${PHPVERSION} .
 ```
 
-## 7.x Docker images
-
-### Building the image
-
-From project root:
-
-```
-# PHPVERSION could be 7.3, 7.4 or 8.0.
-PHPVERSION=7.4
-docker build --build-arg PHPVERSION=$PHPVERSION -t quay.io/pantheon-public/build-tools-ci:7.x-php${PHPVERSION} .
-```
 
 ### Using the image
 
-#### Image name and tag
+#### Image name and tag (Needs update)
 
 - quay.io/pantheon-public/build-tools-ci:8.x-php7.4
 - quay.io/pantheon-public/build-tools-ci:8.x-php8.0
